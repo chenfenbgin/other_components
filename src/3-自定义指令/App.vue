@@ -1,50 +1,20 @@
 <template>
   <div id="app">
-    <!-- <input type="text" v-focus /> -->
-    <button v-chen.aaa.bbb="'chen'" @click="increment">当前计数：{{ counter }}</button>
+    <!-- 以后如果需要对时间进行格式化，只需要加上这个指令就行了，v-format-time -->
+    <h2 v-format-time="'YYYY/MM/DD'">{{timestamp}}</h2>
   </div>
 </template>
 
 <script type="text/javascript">
-import { ref } from "vue";
-
 export default {
-  directives: {
-    chen: {
-      // 定义指令的很多生命周期
-      created(el, bindings) {
-        console.log("chen created", el , bindings);
-        // 修饰符，还有参数，都放在bindings中
-        console.log('bindings', bindings.value, bindings.modifiers);
-      },
-      beforeMount() {
-        console.log("chen beforeMount");
-      },
-
-      mounted() {
-        console.log("chen mounted");
-      },
-      beforeUpdate() {
-        console.log("chen beforeUpdate");
-      },
-      updated() {
-        console.log("chen updated");
-      },
-      beforeUnmount() {
-        console.log("chen beforeUnmount");
-      },
-      unmounted() {
-        console.log("Chen unmounted");
-      },
-    },
-  },
   setup() {
-    const counter = ref(0);
-    const increment = () => counter.value++;
-    return {
-      counter,
-      increment,
-    };
+    const timestamp = 1624452193;
+
+    
+
+    return{
+      timestamp
+    }
   },
 };
 </script>
