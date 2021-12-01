@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <!-- <input type="text" v-focus /> -->
-    <button v-chen @click="increment">当前计数：{{ counter }}</button>
+    <button v-chen.aaa.bbb="'chen'" @click="increment">当前计数：{{ counter }}</button>
   </div>
 </template>
 
@@ -12,8 +12,10 @@ export default {
   directives: {
     chen: {
       // 定义指令的很多生命周期
-      created() {
-        console.log("chen created");
+      created(el, bindings) {
+        console.log("chen created", el , bindings);
+        // 修饰符，还有参数，都放在bindings中
+        console.log('bindings', bindings.value, bindings.modifiers);
       },
       beforeMount() {
         console.log("chen beforeMount");
