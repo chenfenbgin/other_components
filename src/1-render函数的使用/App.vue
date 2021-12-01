@@ -1,35 +1,21 @@
-// 一旦写render函数，template就不需要了
-
 <script type="text/javascript">
 import { h } from "vue";
+import HelloWorld from "./HelloWorld.vue";
 
 export default {
-  // counter可以有两种写法： 在data中定义
-  data() {
-    return {
-      counter: 0,
-    };
-  },
+  // 不需要注册，直接使用就行
+  // components: {
+  //   HelloWorld,
+  // },
+  // render() {
+  //   return h(HelloWorld, {}, "");
+  // },
 
-  //render()函数的执行需要返回一个vnode，而 h函数 可以返回vnode
-  render() {
-    return h("div", { class: "app" }, [
-      h("h2", null, `当前计数： ${this.counter}`),
-      h(
-        "button",
-        {
-          onClick: () => this.counter++,
-        },
-        "+1"
-      ),
-      h(
-        "button",
-        {
-          onClick: () => this.counter++,
-        },
-        "-1"
-      ),
-    ]);
+// 传入多个插槽
+    render() {
+    return h(HelloWorld, null, {
+      default: props => h("span", null, `app传入到Hello World中的内容: ${props.name}`)
+    });
   },
 };
 </script>
