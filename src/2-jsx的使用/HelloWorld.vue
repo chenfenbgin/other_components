@@ -4,12 +4,15 @@ export default {
     return (
       <div>
         <h2>hello world</h2>
-        {this.$slots.default ? this.$slots.default({name:'chen'}) : <span>哈哈哈哈</span>}
+        {this.$slots.default ? (
+          this.$slots.default({ name: "chen" })
+        ) : (
+          <span>哈哈哈哈</span>
+        )}
       </div>
     );
   },
 };
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>

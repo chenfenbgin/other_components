@@ -13,8 +13,10 @@ export default {
     // };
 
     return () => {
+      // h2函数的执行可以返回一个vnode
+      // setup可以替换掉data, 也是可以替代render函数的
       return h("div", { class: "app" }, [
-        h("h2", null, `当前计数： ${counter.value}`), //这里可以使用this
+        h("h2", null, `当前计数： ${counter.value}`), //这里不需要使用this
         h(
           "button",
           {
@@ -35,7 +37,7 @@ export default {
 
   // render() {
   //   return h("div", { class: "app" }, [
-  //     h("h2", null, `当前计数： ${this.counter}`),  //这里可以使用this
+  //     h("h2", null, `当前计数： ${this.counter}`), //这里可以使用this， render函数是有绑定this的
   //     h(
   //       "button",
   //       {
@@ -55,5 +57,4 @@ export default {
 };
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>

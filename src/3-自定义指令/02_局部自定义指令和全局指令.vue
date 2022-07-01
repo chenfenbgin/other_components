@@ -9,10 +9,10 @@
 // import { ref, onMounted } from "vue";
 
 export default {
-  //局部指令
+  // 定义局部指令，可以自定义多个指令
   // directives: {
   //   focus: {
-  //     // 定义指令的很多生命周期
+  //     // 定义指令的很多生命周期，总共有四个参数，el, bindings, vnode, preVnode
   //     mounted(el) {
   //       console.log("focus mounted");
   //       el.focus();
@@ -22,5 +22,4 @@ export default {
 };
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>
